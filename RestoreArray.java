@@ -15,8 +15,7 @@ public class RestoreArray {
 
     public static void main(String[] args) {
         int[] myArr = {1, 2, -1, 4, 7, 6, -2, 4};
-        System.out.println(Arrays.toString(myArr) + " - Original Array");
-        myArr = modifyArray(myArr);
+        System.out.println(Arrays.toString(myArr) + " - Original Array");        
         System.out.println(Arrays.toString(myArr) + " - Modified Array");
     }
 }
