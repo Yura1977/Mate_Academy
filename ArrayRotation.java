@@ -1,11 +1,11 @@
-// Java program to rotate an array of length n by
+// Java program to rotate an array  length  
 // k elements
 
 import java.util.Arrays;
 
 public class ArrayRotation {
-    /*Function to left rotate arr[] of length n by k */
-    private int[] rotateArray(int[] arr, int n, int k) {
+    /*Function to left rotate arr[]  length rotate on k elements*/
+    private int[] rotateArray(int[] arr, int length, int k) {
         int[] result = new int[arr.length];
         int remainingElem = arr.length - k;
         for (int i = 0; i < remainingElem; i++) {
