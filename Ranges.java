@@ -7,10 +7,10 @@ public class Ranges {
                 1, 2, 3, 5, 8, 9, 10, 13, 14, 15, 16
         };
         System.out.println(Arrays.toString(array) + " - Original Array");
-        System.out.println(arrayRanges(array) + " - New Array");
+        System.out.println(selectRange(array) + " - New Array");
     }
 
-    public static String arrayRanges(int[] array) {
+    public static String selectRange(int[] array) {
         StringBuilder result = new StringBuilder();
         int minValue = array[0];
         int maxValue;
