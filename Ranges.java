@@ -17,15 +17,15 @@ public class Ranges {
         for (int i = 1; i < array.length; i++) {
             if (array[i] - array[i - 1] > 1) {
                 maxValue = array[i - 1];
-                boundary(result, minValue, maxValue);
+                Checkboundary(result, minValue, maxValue);
                 minValue = array[i];
             }
         }
-        boundary(result, minValue, array[array.length - 1]);
+        Checkboundary(result, minValue, array[array.length - 1]);
         return result.toString();
     }
 
-    public static void boundary(StringBuilder sb, int minValue, int maxValue) {
+    public static void Checkboundary(StringBuilder sb, int minValue, int maxValue) {
         sb.append("[").append(minValue);
         if (maxValue != minValue) {
             sb.append(" ").append(maxValue);
