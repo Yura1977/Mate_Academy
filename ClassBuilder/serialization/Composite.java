@@ -1,6 +1,5 @@
 package serialization;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,10 +8,6 @@ public class Composite implements Shape {
 
     public Composite(List<Shape> components) {
         this.components = new ArrayList<>(components);
-    }
-
-    public Composite() {
-
     }
 
     public void addComponent(Shape component) {
