@@ -3,9 +3,9 @@ package immutable;
 public class Computer {
 
     //required parameters
-    private String RAM;
-    private String HDD;
-    private String CPU;
+    private final String RAM;
+    private final String HDD;
+    private final String CPU;
 
     //optional parameters
     private boolean isGraphicsCardEnabled;
