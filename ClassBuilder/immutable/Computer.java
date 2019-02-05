@@ -1,6 +1,6 @@
 package immutable;
 
-public class Computer {
+public final class Computer {
 
     //required parameters
     private final String ram;
