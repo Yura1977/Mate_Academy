@@ -19,15 +19,15 @@ public class Computer {
         this.isGraphicsCardEnabled = builder.isGraphicsCardEnabled;
     }
 
-    public String getram() {
+    public String getRam() {
         return ram;
     }
 
-    public String gethdd() {
+    public String getHdd() {
         return hdd;
     }
 
-    public String getcpu() {
+    public String getCpu() {
         return cpu;
     }
 
