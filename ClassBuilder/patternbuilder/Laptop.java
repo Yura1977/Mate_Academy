@@ -54,6 +54,12 @@ public class Laptop {
     }
 }
 
-public enum Processor {Intel_Const, AMD_Const};
+public enum Processor {
+    Intel_Const,
+    AMD_Const
+}
 
-public enum OS {Windows_Const, Linux_Const};
+public enum OS {
+    Windows_Const,
+    Linux_Const
+}
