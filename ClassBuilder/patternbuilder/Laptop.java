@@ -1,11 +1,11 @@
 package patternbuilder;
 
 public class Laptop {
-    Processor processor;
-    OS os;
-    int ram;
-    int hdd;
-    boolean touchDisplay;
+    private Processor processor;
+    private OS os;
+    private int ram;
+    private int hdd;
+    private boolean touchDisplay;
 
     public Laptop setProcessor(Processor processor) {
         this.processor = processor;
@@ -24,7 +24,7 @@ public class Laptop {
 
     public Laptop setTouchDisplay(boolean touchDisplay) {
         this.touchDisplay = touchDisplay;
-        this.os = OS.Windows; //becouse it support such dsisplays
+        this.os = OS.Windows_Const; //becouse it support such dsisplays
         return this;
     }
 
@@ -54,6 +54,6 @@ public class Laptop {
     }
 }
 
-enum Processor {Intel, AMD};
+enum Processor {Intel_Const, AMD_Const};
 
-enum OS {Windows, Linux};
+enum OS {Windows_Const, Linux_Const};

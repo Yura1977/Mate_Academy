@@ -3,32 +3,32 @@ package immutable;
 public class Computer {
 
     //required parameters
-    private String RAM;
-    private String HDD;
-    private String CPU;
+    private String ram;
+    private String hdd;
+    private String cpu;
 
     //optional parameters
     private boolean isGraphicsCardEnabled;
     private boolean isBluetoothEnabled;
 
     private Computer(Builder builder) {
-        this.HDD = builder.HDD;
-        this.CPU = builder.CPU;
-        this.RAM = builder.RAM;
+        this.hdd = builder.hdd;
+        this.cpu = builder.cpu;
+        this.ram = builder.ram;
         this.isBluetoothEnabled = builder.isBluetoothEnabled;
         this.isGraphicsCardEnabled = builder.isGraphicsCardEnabled;
     }
 
-    public String getRAM() {
-        return RAM;
+    public String getram() {
+        return ram;
     }
 
-    public String getHDD() {
-        return HDD;
+    public String gethdd() {
+        return hdd;
     }
 
-    public String getCPU() {
-        return CPU;
+    public String getcpu() {
+        return cpu;
     }
 
     public boolean isGraphicsCardEnabled() {
@@ -41,18 +41,18 @@ public class Computer {
 
     public static class Builder {
         //required parameters
-        private String RAM;
-        private String HDD;
-        private String CPU;
+        private String ram;
+        private String hdd;
+        private String cpu;
 
         //optional parameters
         private boolean isGraphicsCardEnabled;
         private boolean isBluetoothEnabled;
 
         public Builder(String ram, String hdd, String cpu) {
-            this.RAM = ram;
-            this.HDD = hdd;
-            this.CPU = cpu;
+            this.ram = ram;
+            this.hdd = hdd;
+            this.cpu = cpu;
         }
 
         public Builder setGraphicsCardEnabled(boolean isGraphicsCardEnabled) {
@@ -72,6 +72,6 @@ public class Computer {
 
     @Override
     public String toString() {
-        return "HardDisc: " + "\"" + HDD + "\"" + " /RAM: " + RAM + " /CPU: " + CPU;
+        return "HardDisc: " + "\"" + hdd + "\"" + " /ram: " + ram + " /cpu: " + cpu;
     }
 }
