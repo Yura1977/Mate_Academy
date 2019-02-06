@@ -3,7 +3,6 @@ package calculateWithLambdas;
 import java.util.TreeMap;
 
 public class RomanNumber {
-
     private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
 
     static {
