@@ -47,8 +47,7 @@ public class ShapeToJson {
 
     private static String encodeCircle(Circle circle) {
         String jsonString = "\"Circle\" : [{";
-        jsonString += "radius\" : " + circle.getRadius() + "}";
-        jsonString += "]";
+        jsonString += "radius\" : " + circle.getRadius() + "}]";
         return jsonString;
     }
 
