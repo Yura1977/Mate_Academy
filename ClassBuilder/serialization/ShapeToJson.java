@@ -25,30 +25,30 @@ public class ShapeToJson {
     }
 
     private static String encodeTriangle(Triangle triangle) {
-        String jsonString = "Triangle\" : {[";
+        String jsonString = "\"Triangle\" : [{\n";
         int[] triangleSides = triangle.getSides();
         for (int index = 0; index < 2; index++) {
-            jsonString += "side\"" + index + " : ";
-            jsonString += "\"" + triangleSides[index] + "\"";
+            jsonString += "\"side" + index + "\"  : ";
+            jsonString += triangleSides[index];
             jsonString += ",\n";
         }
-        jsonString += "side2\" : ";
-        jsonString += "\"" + triangleSides[2] + "\"";
-        jsonString += "]}";
+        jsonString += "\"side2\" : ";
+        jsonString += triangleSides[2];
+        jsonString += "\n}]";
         return jsonString;
     }
 
     private static String encodeSquare(Square square) {
-        String jsonString = "Square\" : {[";
-        jsonString += "side\" : \"" + square.getSide() + "\"]";
-        jsonString += "}";
+        String jsonString = "\"Square\" : [{";
+        jsonString += "\"side\" : " + square.getSide();
+        jsonString += "}]";
         return jsonString;
     }
 
     private static String encodeCircle(Circle circle) {
-        String jsonString = "Circle\" : {[";
-        jsonString += "radius\" : \"" + circle.getRadius() + "\"]";
-        jsonString += "}";
+        String jsonString = "\"Circle\" : [{";
+        jsonString += "radius\" : " + circle.getRadius() + "}";
+        jsonString += "]";
         return jsonString;
     }
 
