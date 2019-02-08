@@ -55,4 +55,4 @@ public class Laptop {
 }
 
 public enum Processor {INTEL,AMD}
-public enum OS {Windows,Linux}
+public enum OS {WINDOWS,LINUX}
