@@ -53,7 +53,7 @@ public class ShapeToJson {
 
     private static String encodeGroup(Composite group) {
         StringBuilder jsonString = new StringBuilder();
-        jsonString.append("\t\"Group\" : {\n");
+        jsonString.append("\n\t\"Group\" : {\n");
         List<Shape> shapes = group.getComponents();
         for (Shape shape : shapes) {
             String[] lines = encodeShape(shape).split("\n");
