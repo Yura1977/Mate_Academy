@@ -2,7 +2,7 @@ package patternbuilder;
 
 public class Laptop {
     private Processor processor;
-    private OS os;
+    private Os os;
     private int ram;
     private int hdd;
     private boolean touchDisplay;
