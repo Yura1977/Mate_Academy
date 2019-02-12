@@ -27,7 +27,7 @@ public class ShapeToJson {
     private static String encodeTriangle(Triangle triangle) {
         String jsonString = "\n{\n";
         int[] triangleSides = triangle.getSides();
-        for (int index = 0; index < 3; index++) {
+        for (int index = 0; index < 2; index++) {
             jsonString += "\"side" + index + "\"  : ";
             jsonString += triangleSides[index];
             jsonString += ",";
