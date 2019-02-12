@@ -1,6 +1,6 @@
 package serialization;
 
-import java.util.List;
+        import java.util.List;
 
 public class ShapeToJson {
     public static String encode(Shape component) {
@@ -27,7 +27,7 @@ public class ShapeToJson {
     private static String encodeTriangle(Triangle triangle) {
         String jsonString = "\n{\n";
         int[] triangleSides = triangle.getSides();
-        for (int index = 0; index < 2; index++) {
+        for (int index = 0; index < 3; index++) {
             jsonString += "\"side" + index + "\"  : ";
             jsonString += triangleSides[index];
             jsonString += ",";
@@ -39,7 +39,7 @@ public class ShapeToJson {
     }
 
     private static String encodeSquare(Square square) {
-        return "\n{\n\"side\" : " + square.getSide() + "\n}";
+        return "\n{\n\"side\" : " + square.getSide() + "\n},";
     }
 
     private static String encodeCircle(Circle circle) {
