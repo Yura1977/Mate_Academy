@@ -24,7 +24,7 @@ public class Laptop {
 
     public Laptop setTouchDisplay(boolean touchDisplay) {
         this.touchDisplay = touchDisplay;
-        this.os = Os.Windows_Const; //becouse it support such dsisplays
+        this.os = Os.WINDOWS; //becouse it support such dsisplays
         return this;
     }
 
