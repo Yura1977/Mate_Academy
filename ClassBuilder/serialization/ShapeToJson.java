@@ -25,46 +25,41 @@ public class ShapeToJson {
     }
 
     private static String encodeTriangle(Triangle triangle) {
-        String jsonString = "\"Triangle\" : {\n";
+        String jsonString = "\n{\n";
         int[] triangleSides = triangle.getSides();
         for (int index = 0; index < 2; index++) {
             jsonString += "\"side" + index + "\"  : ";
             jsonString += triangleSides[index];
-            jsonString += ",\n";
+            jsonString += ",";
         }
         jsonString += "\"side2\" : ";
         jsonString += triangleSides[2];
-        jsonString += "\n}";
+        jsonString += "\n},";
         return jsonString;
     }
 
     private static String encodeSquare(Square square) {
-        String jsonString = "\"Square\" : {";
-        jsonString += "\"side\" : " + square.getSide();
-        jsonString += "}";
-        return jsonString;
+        return "\n{\n\"side\" : " + square.getSide() + "\n}";
     }
 
     private static String encodeCircle(Circle circle) {
-        String jsonString = "\"Circle\" : {";
-        jsonString += "radius\" : " + circle.getRadius() + "}";
-        return jsonString;
+        return  "{\n\"radius\" : " + circle.getRadius() + "\n}";
     }
-    
+
     private static String encodeGroup(Composite group) {
         StringBuilder jsonString = new StringBuilder();
-        jsonString.append("\n\t\"Group\" : [{\n");
+        jsonString.append("\n[{");
         List<Shape> shapes = group.getComponents();
         for (Shape shape : shapes) {
             String[] lines = encodeShape(shape).split("\n");
             for (String line : lines) {
                 jsonString.append("\t").append(line).append("\n");
             }
-            jsonString.setCharAt(jsonString.length() - 1, ',');
             jsonString.append("\n");
         }
+
         jsonString.deleteCharAt(jsonString.length() - 2); // Removing last comma
-        jsonString.append("\t}]");
+        jsonString.append("}]");
         return jsonString.toString();
     }
 }
