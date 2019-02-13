@@ -57,7 +57,7 @@ public class ShapeToJson {
                 jsonString.append("\t").append(line).append("\t\n");
             }
         }
-        jsonString.deleteCharAt(jsonString.length() - 1).append("\n]"); // Removing last comma
+        jsonString.deleteCharAt(jsonString.length() - 1).append("\n]");
         jsonString.append("\n");
         return jsonString.append("}").toString();
     }
