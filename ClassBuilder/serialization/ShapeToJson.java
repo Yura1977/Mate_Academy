@@ -1,12 +1,12 @@
 package serialization;
 
-        import java.util.List;
+import java.util.List;
 
 public class ShapeToJson {
     public static String encode(Shape component) {
-        String jsonString = "{";
+        String jsonString = "\n";
         jsonString += encodeShape(component);
-        jsonString += "\n}";
+        jsonString += "\n";
         return jsonString;
     }
 
@@ -25,12 +25,12 @@ public class ShapeToJson {
     }
 
     private static String encodeTriangle(Triangle triangle) {
-        String jsonString = "\n{\n";
+        String jsonString = "{\n";
         int[] triangleSides = triangle.getSides();
         for (int index = 0; index < 2; index++) {
             jsonString += "\"side" + index + "\"  : ";
             jsonString += triangleSides[index];
-            jsonString += ",";
+            jsonString += ",\n";
         }
         jsonString += "\"side2\" : ";
         jsonString += triangleSides[2];
@@ -39,27 +39,26 @@ public class ShapeToJson {
     }
 
     private static String encodeSquare(Square square) {
-        return "\n{\n\"side\" : " + square.getSide() + "\n},";
+        return "{\n\"side\" : " + square.getSide() + "\n},";
     }
 
     private static String encodeCircle(Circle circle) {
-        return  "{\n\"radius\" : " + circle.getRadius() + "\n}";
+        return "{\n\"radius\" : " + circle.getRadius() + "\n}";
     }
 
     private static String encodeGroup(Composite group) {
         StringBuilder jsonString = new StringBuilder();
-        jsonString.append("\n[{");
+        jsonString.append("{\n");
+        jsonString.append("\t\"components\" : [\n");
         List<Shape> shapes = group.getComponents();
         for (Shape shape : shapes) {
             String[] lines = encodeShape(shape).split("\n");
             for (String line : lines) {
-                jsonString.append("\t").append(line).append("\n");
+                jsonString.append("\t").append(line).append("\t\n");
             }
-            jsonString.append("\n");
         }
-
-        jsonString.deleteCharAt(jsonString.length() - 2); // Removing last comma
-        jsonString.append("}]");
-        return jsonString.toString();
+        jsonString.deleteCharAt(jsonString.length() - 1).append("\n]"); // Removing last comma
+        jsonString.append("\n");
+        return jsonString.append("}").toString();
     }
 }
