@@ -1,26 +1,26 @@
 package merge.sort;
 
-class Merge {
+public class Merge {
     private long[] arr;
     private int n;
 
-    Merge(int max) {
+   protected Merge(int max) {
         arr = new long[max];
         n = 0;
     }
 
-    void insert(long value) {
+    protected void insert(long value) {
         arr[n] = value;
         n++;
     }
 
-    void display() {
+    protected void display() {
         for (int j = 0; j < n; j++)
             System.out.print(arr[j] + " ");
         System.out.println(" ");
     }
 
-    void mergeSort() {
+    protected void mergeSort() {
         long[] workSpace = new long[n];
         recMergeSort(workSpace, 0, n - 1);
     }
