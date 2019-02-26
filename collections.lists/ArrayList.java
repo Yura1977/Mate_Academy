@@ -40,29 +40,22 @@ public class ArrayList<T> implements List<T> {
     }
 
     private void resizeAdd(){
-        T[] temp = (T[]) data;
-        System.arraycopy(temp, 0, data, 0, temp.length);
+        Object[] newData = new Object[data.length * 2];
+        System.arraycopy(data, 0, newData, 0, data.length);
+        data = newData;
     }
 
     @Override
     public T remove(int index) {
         this.checkIndexException(index);
-        resizeRem(index);
+        resizeRem();
         return null;
     }
 
-    private T resizeRem(int index){
-        T[] temp = null;
-        try {
-            temp = (T[]) data;
-            data = (T[]) new Object[temp.length - 1];
-            System.arraycopy(temp, 0, data, 0, index);
-            int amountElemAfterIndex = temp.length - index - 1;
-            System.arraycopy(temp, index + 1, data, index, amountElemAfterIndex);
-        } catch (ClassCastException ex) {
-            ex.printStackTrace();
-        }
-        return (T) temp;
+    private void resizeRem(){
+            Object[] newData = new Object[data.length / 2];
+            System.arraycopy(data, 0, newData, 0, data.length);
+            data = newData;
     }
 
     @Override
