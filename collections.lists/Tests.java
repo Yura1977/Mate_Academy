@@ -13,6 +13,9 @@ public class Tests<T> {
         arrayListOfIntegers.add(4);
         arrayListOfIntegers.add(5);
 
+        int removed1 = arrayListOfIntegers.remove(2);
+        System.out.println("\ndata " + removed1 + " is removed from the ArrayList of integers");
+
         tests.printList(arrayListOfIntegers);
 
         List<String> arrayListOfStrings = new ArrayList<>();
@@ -41,6 +44,7 @@ public class Tests<T> {
         linkedListOfStrings.add("Green");
         linkedListOfStrings.add("Yellow");
         linkedListOfStrings.add("Red");
+
 
         tests.printList(linkedListOfStrings);
 
