@@ -48,10 +48,16 @@ public class ArrayList<T> implements List<T> {
     @Override
     public T remove(int index) {
         checkIndexException(index);
+        T temp = (T) data[index];
+        data[index] = null;
+        for (index=0; index<size-1;index++){
+            data[index] = data[index+1];
+        }
+        size--;
         if (size == data.length / 4) {
             resizeRem();
         }
-        return null;
+        return temp;
     }
 
     private void resizeRem() {
