@@ -13,12 +13,6 @@ public class ArrayList<T> implements List<T> {
         this.data = new Object[capacity];
     }
 
-    private void checkIndexException(int index) {
-        if (index < 0 || index > size) {
-            throw new ArrayIndexOutOfBoundsException("Index: " + index + ", Size: " + size);
-        }
-    }
-
     @Override
     public T get(int index) {
         checkIndexException(index);
@@ -39,19 +33,13 @@ public class ArrayList<T> implements List<T> {
         return false;
     }
 
-    private void resizeAdd() {
-        Object[] newData = new Object[data.length * 2];
-        System.arraycopy(data, 0, newData, 0, data.length);
-        data = newData;
-    }
-
     @Override
     public T remove(int index) {
         checkIndexException(index);
         T temp = (T) data[index];
         data[index] = null;
-        for (index=0; index<size-1;index++){
-            data[index] = data[index+1];
+        for (index = 0; index < size - 1; index++) {
+            data[index] = data[index + 1];
         }
         size--;
         if (size == data.length / 4) {
@@ -60,14 +48,26 @@ public class ArrayList<T> implements List<T> {
         return temp;
     }
 
-    private void resizeRem() {
-        Object[] newData = new Object[data.length / 2];
+    @Override
+    public int size() {
+        return size;
+    }
+
+    private void checkIndexException(int index) {
+        if (index < 0 || index > size) {
+            throw new ArrayIndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+    }
+
+    private void resizeAdd() {
+        Object[] newData = new Object[data.length * 2];
         System.arraycopy(data, 0, newData, 0, data.length);
         data = newData;
     }
 
-    @Override
-    public int size() {
-        return size;
+    private void resizeRem() {
+        Object[] newData = new Object[data.length / 2];
+        System.arraycopy(data, 0, newData, 0, data.length);
+        data = newData;
     }
 }
