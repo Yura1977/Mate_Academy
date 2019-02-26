@@ -28,7 +28,7 @@ public class ArrayList<T> implements List<T> {
     @Override
     public boolean add(T t) {
         try {
-            if (size == data.length){
+            if (size == data.length) {
                 resizeAdd();
             }
             data[size++] = t;
@@ -39,7 +39,7 @@ public class ArrayList<T> implements List<T> {
         return false;
     }
 
-    private void resizeAdd(){
+    private void resizeAdd() {
         Object[] newData = new Object[data.length * 2];
         System.arraycopy(data, 0, newData, 0, data.length);
         data = newData;
@@ -47,15 +47,17 @@ public class ArrayList<T> implements List<T> {
 
     @Override
     public T remove(int index) {
-        this.checkIndexException(index);
-        resizeRem();
+        checkIndexException(index);
+        if (size == data.length / 4) {
+            resizeRem();
+        }
         return null;
     }
 
-    private void resizeRem(){
-            Object[] newData = new Object[data.length / 2];
-            System.arraycopy(data, 0, newData, 0, data.length);
-            data = newData;
+    private void resizeRem() {
+        Object[] newData = new Object[data.length / 2];
+        System.arraycopy(data, 0, newData, 0, data.length);
+        data = newData;
     }
 
     @Override
